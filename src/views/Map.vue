@@ -1,9 +1,13 @@
 <template>
-    <h3>map</h3>
-    <transition name="slide-fade">
-        <area-property v-if='area.length'></area-property>
-    </transition>
-    <map-svg />
+    <div style='display:flex'>
+        <div class='main' v-on:click="area.length ? closeTable()">
+            <h3>map</h3>
+            <map-svg />`
+        </div>
+        <transition name="slide-fade">
+            <area-property v-if='area.length'></area-property>
+        </transition>
+    </div>
 </template>
 <script>
 import {provide, ref} from 'vue';

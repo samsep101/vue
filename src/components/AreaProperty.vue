@@ -1,5 +1,5 @@
 <template>
-    
+
     <div id='properties'>
         <h2>properties</h2>
         <div class="property">
@@ -39,6 +39,7 @@
         
     </div>
 
+
 </template>
 <script>
 export default {
@@ -54,7 +55,7 @@ export default {
 <style >
     #properties{
         position: fixed;
-        top:0;
+        
         right:0px;
         padding: 10px;
         border:3px solid black;
@@ -62,6 +63,7 @@ export default {
         width:600px;
         background-color: rgba(255,255,255);
         height: 100%;
+        margin-top: -2rem;
     }
     
     .property{
