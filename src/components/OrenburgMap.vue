@@ -59,26 +59,29 @@
                   const title = this.node.attributes["title"].value;
 
                   //this здесь элемент а не vue приложение
-
                   const id = this.node.attributes["fill"];
-                  this.node.attributes["fill"].value = 'red';
-                  vue.areaChange(mapId,title);
+                  if(vue.area.indexOf(this.node.attributes['title'].value) == -1){
+                    this.node.attributes["fill"].value = 'red';
+                    vue.area.push(title);
+                  }else{
+                      
+                      this.node.attributes['fill'].value = '#2f6dbf';
+                      vue.area.splice(vue.area.indexOf(title), 1);
+                  }
                 });
                 element.mouseover(function(){
-                    this.node.attributes["fill"].value = 'grey';
+                    this.node.attributes["fill"].value = '#5392e6';
                 });
                 element.mouseout(function(){
-                    if(this.node.attributes['fill'].value == 'grey')
+                    if(vue.area.indexOf(this.node.attributes['title'].value) == -1)
                         this.node.attributes["fill"].value = '#2f6dbf';
-                    
+                    else
+                        this.node.attributes["fill"].value = 'red';
                 });
 
                 
             },
-          areaChange(mapId,title){
-
-              this.area = title;
-            }
+          
         }
 
     }

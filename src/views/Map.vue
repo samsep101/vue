@@ -1,6 +1,6 @@
 <template>
     <h3>map</h3>
-    <area-property v-if='area'></area-property>
+    <area-property v-if='area.length'></area-property>
     <map-svg />
 </template>
 <script>
@@ -11,7 +11,7 @@ import AreaProperty from '../components/AreaProperty.vue';
 
 export default {
     setup() {
-        let area = ref('' )
+        let area = ref([])
         provide('area', area)
         return {area}
     },
