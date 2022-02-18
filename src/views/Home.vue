@@ -109,7 +109,7 @@ export default {
   }
 
   .inner {
-    display: block;
+    /* display: block; */
     justify-content: none;
   }
 
