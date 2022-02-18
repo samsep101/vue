@@ -1,11 +1,10 @@
 <template>
     <div style='display:flex'>
-        <div class='main' v-on:click="area.length ? closeTable()">
-            <h3>map</h3>
-            <map-svg />`
-        </div>
+     
+        <h3>map</h3>
+        <map-svg />
         <transition name="slide-fade">
-            <area-property v-if='area.length'></area-property>
+            <area-property v-if='area.length&&!close'></area-property>
         </transition>
     </div>
 </template>
@@ -18,8 +17,10 @@ import AreaProperty from '../components/AreaProperty.vue';
 export default {
     setup() {
         let area = ref([])
+        let close = ref(0)
         provide('area', area)
-        return {area}
+        provide('close', close)
+        return {area, close}
     },
     components:{
         MapSvg,
@@ -27,9 +28,10 @@ export default {
     },
     data(){
         return{
-            property:[],
+            property:[]
         }
-    }
+    },
+
 
 }
 </script>

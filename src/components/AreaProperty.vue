@@ -1,5 +1,5 @@
 <template>
-
+    <div id="fon"></div>
     <div id='properties'>
         <h2>properties</h2>
         <div class="property">
@@ -42,23 +42,41 @@
 
 </template>
 <script>
+import {inject} from 'vue';
 export default {
     setup() {
-        
+        let area = inject('area')
+        let close = inject('close')
+
+        return {area, close}
     },
     name:'AreaProperty',
     data(){
         return {}
+    },
+    methods:{
+        closeProperty(){
+            if(this.area.length > 0)
+                this.close = 1;
+        }
     }
 }
 </script>
 <style >
+    #fon{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        /* margin-top: 2rem; */
+    }
     #properties{
         position: fixed;
-        
         right:0px;
         padding: 10px;
-        border:3px solid black;
+        /* border:3px solid black; */
         /* border-right: 2px solid rgb(224, 45, 45); */
         width:600px;
         background-color: rgba(255,255,255);
