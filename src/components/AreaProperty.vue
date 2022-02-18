@@ -1,4 +1,5 @@
 <template>
+    
     <div id='properties'>
         <h2>properties</h2>
         <div class="property">
@@ -13,7 +14,7 @@
             </div>
         </div>
 
-         <div class="property">
+        <div class="property">
             <img src="https://avatars.mds.yandex.net/i?id=aba7b672a689330c910372a22922df80-5897285-images-thumbs&n=13" alt="">
             <div class='text'>
                 <h3>
@@ -24,7 +25,7 @@
                 </p>
             </div>
         </div>
-         <div class="property">
+        <div class="property">
             <img src="https://avatars.mds.yandex.net/i?id=aba7b672a689330c910372a22922df80-5897285-images-thumbs&n=13" alt="">
             <div class='text'>
                 <h3>
@@ -37,6 +38,7 @@
         </div>
         
     </div>
+
 </template>
 <script>
 export default {
@@ -51,14 +53,15 @@ export default {
 </script>
 <style >
     #properties{
-        position: absolute;
-        left:25px;
+        position: fixed;
+        top:0;
+        right:0px;
         padding: 10px;
-        border: 2px solid rgb(31, 49, 87);
-        border-radius: 20px;
+        border:3px solid black;
+        /* border-right: 2px solid rgb(224, 45, 45); */
         width:600px;
-        background-color: rgba(255,255,255,0.6);
-
+        background-color: rgba(255,255,255);
+        height: 100%;
     }
     
     .property{
@@ -75,4 +78,5 @@ export default {
         flex-direction: column;
 
     }
+
 </style>
