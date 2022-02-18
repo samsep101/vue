@@ -5,8 +5,9 @@
 <script>
     
     import austriaMap from "../assets/austriaMap"
-    //import { provide } from '@vue/runtime-core';
+    import { provide } from '@vue/runtime-core';
     import {inject} from 'vue'
+// import func from 'vue-editor-bridge';
     export default {
         setup(){
             let area = inject('area');
@@ -34,7 +35,7 @@
         methods: {
             generateVenueMap () {
                 const mapData = austriaMap.g.path
-                const svgContainer = this.$svg("austriaMap").size('100%', '100%').viewbox(-200, 0, this.mapAttr.viewBoxWidth, this.mapAttr.viewBoxHeight);
+                const svgContainer = this.$svg("austriaMap").size('90%', '90%').viewbox(0, 0, this.mapAttr.viewBoxWidth, this.mapAttr.viewBoxHeight);
                 this.svgContainer = svgContainer;
                 mapData.forEach((pathObj) => {
                     this.generatePath(svgContainer, pathObj);
@@ -62,7 +63,15 @@
                   const id = this.node.attributes["fill"];
                   this.node.attributes["fill"].value = 'red';
                   vue.areaChange(mapId,title);
-                })
+                });
+                element.mouseover(function(){
+                    this.node.attributes["fill"].value = 'grey';
+                });
+                element.mouseout(function(){
+                    if(this.node.attributes['fill'].value == 'grey')
+                        this.node.attributes["fill"].value = '#2f6dbf';
+                    
+                });
 
                 
             },
