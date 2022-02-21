@@ -1,43 +1,41 @@
 <template>
-    <div style='display:flex'>
-     
-        <h3>map</h3>
-        <map-svg />
-        <transition name="slide-fade">
-            <area-property v-if='area.length&&!close'></area-property>
-        </transition>
-    </div>
+  <div style="display: flex">
+    <h3>map</h3>
+    <map-svg />
+    <transition name="slide-fade">
+      <area-property v-if="area.length && !close"></area-property>
+    </transition>
+  </div>
 </template>
 <script>
-import {provide, ref} from 'vue';
-import MapSvg from '../components/MapSvg.vue'
-import AreaProperty from '../components/AreaProperty.vue';
-
+import { provide, ref } from "vue";
+import MapSvg from "../components/MapSvg.vue";
+import AreaProperty from "../components/AreaProperty.vue";
 
 export default {
-    setup() {
-        let area = ref([])
-        let close = ref(0)
-        provide('area', area)
-        provide('close', close)
-        return {area, close}
-    },
-    components:{
-        MapSvg,
-        AreaProperty
-    },
-    data(){
-        return{
-            property:[]
-        }
-    },
-
-
-}
+  setup() {
+    let area = ref("");
+    let close = ref(0);
+    let areaSvg = ref("");
+    provide("area", area);
+    provide("close", close);
+    provide("areaSvg", areaSvg);
+    return { area, close, areaSvg };
+  },
+  components: {
+    MapSvg,
+    AreaProperty,
+  },
+  data() {
+    return {
+      property: [],
+    };
+  },
+};
 </script>
 <style>
-    /* display: flex; */
-    .slide-fade-enter-active {
+/* display: flex; */
+.slide-fade-enter-active {
   transition: all 0.3s ease-out;
 }
 

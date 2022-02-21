@@ -11,7 +11,8 @@ export default {
   setup() {
     let area = inject("area");
     let close = inject("close");
-    return { area, close };
+    let areaSvg = inject("areaSvg");
+    return { area, close, areaSvg };
   },
   name: "OrenburgMap",
   data() {
@@ -60,13 +61,20 @@ export default {
 
         //this здесь элемент а не vue приложение
         const id = this.node.attributes["fill"];
-        if (vue.area.indexOf(this.node.attributes["title"].value) == -1) {
+        if (vue.area != this.node.attributes["title"].value) {
+          if (vue.area != "") {
+            console.log(vue.areaSvg);
+
+            vue.areaSvg.node.attributes["fill"].value = "#2f6dbf";
+            vue.area = "";
+          }
           this.node.attributes["fill"].value = "red";
-          vue.area.push(title);
+          vue.area = title;
+          vue.areaSvg = this;
           vue.close = 0;
         } else {
           this.node.attributes["fill"].value = "#2f6dbf";
-          vue.area.splice(vue.area.indexOf(title), 1);
+          vue.area = "";
         }
       });
       element.mouseover(function () {
