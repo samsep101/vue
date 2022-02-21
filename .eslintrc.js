@@ -1,17 +1,21 @@
 module.exports = {
-  root: true,
-  env: {
-    node: true
-  },
-  'extends': [
-    'plugin:vue/essential',
-    'eslint:recommended'
-  ],
-  rules: {
-    'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
-  },
+    "env": {
+        "browser": true,
+        "es2021": true,
+        node: true
+    },
+    extends: ["eslint:recommended", "plugin:react/recommended"],
   parserOptions: {
-    parser: 'babel-eslint'
-  }
+    ecmaFeatures: {
+      jsx: true,
+    },
+    "plugins": [
+        "vue"
+    ],
+    rules: {
+        "react/react-in-jsx-scope": "off",
+        // allow jsx syntax in js files (for next.js project)
+        "react/jsx-filename-extension": [1, { extensions: [".js", ".jsx"] }],
+        "react/prop-types": 0,
+      },
 }
