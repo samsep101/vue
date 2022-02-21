@@ -17,18 +17,22 @@ export default {
   name: "OrenburgMap",
   data() {
     return {
-      width: window.innerWidth,
+      width: window.innerWidth - window.innerWidth * 0.1,
       svgId: "austriaMap",
       mapAttr: {
-        viewBoxWidth: window.innerWidth,
-        viewBoxHeight: 1000,
-        imageWidth: window.innerWidth,
-        imageHeight: 1000,
+        viewBoxWidth: 1780,
+        viewBoxHeight: 800,
+        imageWidth: 1780,
+        imageHeight: 800,
       },
       svgContainer: null,
     };
   },
   mounted() {
+    window.addEventListener("resize", () => {
+      this.width = window.innerWidth - window.innerWidth * 0.1;
+      this.svgContainer.size(this.width, "90%");
+    });
     this.generateVenueMap();
   },
   computed: {},
@@ -36,7 +40,7 @@ export default {
     generateVenueMap() {
       const mapData = austriaMap.g.path;
       const svgContainer = this.$svg("austriaMap")
-        .size("90%", "90%")
+        .size(this.width, "90%")
         .viewbox(0, 0, this.mapAttr.viewBoxWidth, this.mapAttr.viewBoxHeight);
       this.svgContainer = svgContainer;
       mapData.forEach((pathObj) => {
@@ -68,7 +72,7 @@ export default {
             vue.areaSvg.node.attributes["fill"].value = "#2f6dbf";
             vue.area = "";
           }
-          this.node.attributes["fill"].value = "red";
+          this.node.attributes["fill"].value = "#81abe3";
           vue.area = title;
           vue.areaSvg = this;
           vue.close = 0;
@@ -83,7 +87,7 @@ export default {
       element.mouseout(function () {
         if (vue.area.indexOf(this.node.attributes["title"].value) == -1)
           this.node.attributes["fill"].value = "#2f6dbf";
-        else this.node.attributes["fill"].value = "red";
+        else this.node.attributes["fill"].value = "#17529f";
       });
     },
   },
