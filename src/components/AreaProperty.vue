@@ -1,7 +1,8 @@
 <template>
   <div id="fon" v-on:click="doClose"></div>
   <div id="properties">
-    <h2>properties</h2>
+    <div class="cross"></div>
+    <h2 class="h2-properties">properties</h2>
     <div class="property">
       <img
         src="https://avatars.mds.yandex.net/i?id=aba7b672a689330c910372a22922df80-5897285-images-thumbs&n=13"
@@ -72,14 +73,14 @@ export default {
   /* margin-top: 2rem; */
 }
 #properties {
-  position: fixed;
+  position: absolute;
   right: 0px;
   padding: 10px;
   /* border:3px solid black; */
   /* border-right: 2px solid rgb(224, 45, 45); */
   width: 600px;
   background-color: rgba(255, 255, 255);
-  height: 100%;
+  height: 70%;
   margin-top: -2rem;
 }
 
@@ -96,4 +97,25 @@ export default {
   display: flex;
   flex-direction: column;
 }
+
+.h2-properties {
+  margin-top: 30px;
+}
+
+.cross {
+  cursor: pointer; 
+  position: absolute; 
+  top: 20px; 
+  left: 10px;
+}
+
+.cross:before, .cross:after {
+  content: ""; 
+  position: absolute; 
+  width: 24px; 
+  height: 4px; 
+  background: rgb(87, 87, 87);
+}
+.cross:before {transform: rotate(45deg);}
+.cross:after {transform: rotate(-45deg);}
 </style>
