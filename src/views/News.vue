@@ -78,4 +78,10 @@ img:nth-child(4){animation-delay:0}
 @media(min-width:321px) and (max-width:480px) {
   .container_slider_css{width:80%;height:190px}
 }
+
+@media (max-width: 1000px) {
+  .container_slider_css {
+    z-index: -2;
+  }
+}
 </style>
