@@ -11,7 +11,7 @@
         <h1>Новости</h1>
         <h2>Совкомбанк Лизинг будет докапитализирован на 1 млрд рублей</h2>
         <div class="line"></div>
-        <img src="../assets/images/imageNews.jpg" alt="">
+        <img class="main-img" src="../assets/images/imageNews.jpg" alt="">
         <p>Совкомбанк докапитализирует ООО «Совкомбанк лизинг» на сумму 1 млрд в связи с
           высокими темпами роста бизнеса компании. Докапитализация будет
           произведена путем внесения единственным участником – Совкомбанком, вклада в имущество компании. </p>
@@ -82,6 +82,15 @@ img:nth-child(4){animation-delay:0}
 @media (max-width: 1000px) {
   .container_slider_css {
     z-index: -2;
+  }
+
+  .main-img {
+    width: 300px;
+    height: 150px;
+  }
+
+  .elements p {
+    width: 350px;
   }
 }
 </style>
