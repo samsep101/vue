@@ -85,7 +85,8 @@ export default {
   width: 600px;
   background-color: rgba(255, 255, 255);
   height: 100%;
-  margin-top: -2rem;
+  margin-top: 0px;
+  top: 0;
 }
 
 .property {
@@ -145,4 +146,30 @@ export default {
   transform: translateX(600px);
   /* opacity: 0; */
 }
+
+@media (max-width: 1100px) {
+  .property img {
+    width: 50px;
+    height: 50px;
+  }
+
+  #properties {
+    top: 0;
+    width: 300px;  
+    margin-top: 0px;
+  }
+
+  .close {
+    margin-left: 0px;
+    font-size: 2rem;
+    background-color: antiquewhite;
+    border-radius: 25px;
+    width: 25px;
+    height: 25px;
+    padding: 0.1rem 0.4rem;
+    cursor: pointer;
+    margin-top: 70px;
+  }
+}
+
 </style>
