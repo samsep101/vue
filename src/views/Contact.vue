@@ -177,6 +177,7 @@ export default {
     height: 0.5px;
     background-color: gray;
     position: block;
+    z-index: -2;
   }
 
   .contact-number {
