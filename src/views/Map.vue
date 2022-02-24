@@ -1,6 +1,6 @@
 <template>
-  <div style="display: flex">
-    <h3>map</h3>
+  <div style="display: block">
+    <h3 class="map-h3">map</h3>
     <map-svg />
 
     <area-property></area-property>
@@ -32,3 +32,11 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+
+.map-h3 {
+  text-align: center;
+}
+
+</style>
