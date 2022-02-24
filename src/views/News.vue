@@ -63,6 +63,12 @@ export default {
   position: relative;
   border-radius: 2px;
 }
+
+.container_slider_css > img {
+  width: 100%;
+  height: 90px;
+}
+
 .photo_slider_css{position:absolute;animation:round 16s infinite;opacity:0;width:100%}
 @keyframes round {
   25%{opacity:1}
@@ -80,6 +86,10 @@ img:nth-child(4){animation-delay:0}
 }
 
 @media (max-width: 1000px) {
+  .InfoNews {
+    margin: 0px 10px;
+  }
+
   .container_slider_css {
     z-index: -2;
   }
