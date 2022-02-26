@@ -164,6 +164,10 @@ export default {
 }
 
 @media (max-width: 1100px) {
+  .elemets {
+    width: 0px;
+  }
+
   .contact-div-inner {
     display: block;
     justify-content: space-between;
@@ -177,6 +181,12 @@ export default {
     height: 0.5px;
     background-color: gray;
     position: block;
+    z-index: -2;
+
+    width: 0px;
+    height: 0.5px;
+    background-color: gray;
+    position: absolute;
   }
 
   .contact-number {

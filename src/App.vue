@@ -13,14 +13,14 @@
             <li><a class="menu__item"><router-link class="router-bank" to="/news">Новости</router-link></a></li>
             <li><a class="menu__item"><router-link class="router-bank" to="/contact">Контакты</router-link></a></li>
             <li><a class="menu__item"><router-link class="router-bank" to="/mortgage">Ипотека</router-link></a></li>
-            <li><a class="menu__item"><router-link to='/map'>Карта области</router-link></a></li>
+            <li><a class="menu__item"><router-link class="router-bank" to='/map'>Карта области</router-link></a></li>
           </ul>
         </div>
         <router-link class="router-bank" to="/about-bank">О банке</router-link>
         <router-link class="router-bank" to="/news">Новости</router-link>
         <router-link class="router-bank" to="/contact">Контакты</router-link>
         <router-link class="router-bank" to="/mortgage">Ипотека</router-link>
-        <router-link to='/map'>Карта области</router-link>
+        <router-link class="router-bank" to='/map'>Карта области</router-link>
       </div>
       <div class="none"></div>
     </div>
@@ -30,7 +30,7 @@
   </main>
 
   <footer class="footer">
-    <div class="inner">
+    <div class="footer-inner">
       <div class="society">
         <a href="https://www.instagram.com/sovcombank/"><img src="./assets/images/instagram.png" width="25" height="25"></a>
         <a href="https://vk.com/sovcombank"><img src="./assets/images/vk.png" width="25" height="25"></a>
@@ -58,4 +58,19 @@ export default {
 }
 </script>
 <style>
+
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 10px;
+  }
+
+@media(max-width: 1100px) {
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 10px;
+  }
+}
+
 </style>
